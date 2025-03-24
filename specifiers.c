@@ -1,56 +1,66 @@
 #include "main.h"
 
 /**
- * print_char - affiche un caractère
+ * print_char - Affiche un caractère
  * @arguments: va_list contenant le caractère à afficher
  *
- * Return: nombre de caractères affichés, toujours 1, puisque character
+ * Return: 1 si succès, -1 en cas d'erreur d'écriture
  */
 int print_char(va_list arguments)
 {
+	/* On récupère le caractère depuis la liste */
 	char c = va_arg(arguments, int);
 
-	_putchar(c);
+	/* On tente de l'afficher, si échec on retourne -1 */
+	if (_putchar(c) == -1)
+		return (-1);
 
-	return (1);
+	return (1); /* Succès, on a affiché 1 caractère */
 }
 
 /**
- * print_string - affiche une chaîne de caractères
- * @arguments: va_list contenant la string à afficher
+ * print_string - Affiche une chaîne de caractères
+ * @arguments: va_list contenant la chaîne à afficher
  *
- * Return: nombre de caractères affichés
+ * Return: Nombre de caractères affichés, ou -1 en cas d'erreur
  */
 int print_string(va_list arguments)
 {
 	int i;
 	int counter = 0;
-
+	/* On récupère la chaîne depuis la liste */
 	char *str = va_arg(arguments, char *);
 
-	/* si la string est NULL, le contenu de str devient "(null)" */
+	/* Si la chaîne est NULL, on affiche "(null)" */
 	if (!str)
 		str = "(null)";
 
-	/* on parcourt chaque caractère de la string */
+	/* On parcourt chaque caractère de la chaîne */
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		_putchar(str[i]);
-		counter++;
+		/* On affiche chaque caractère un par un */
+		if (_putchar(str[i]) == -1)
+			return (-1); /* Si une écriture échoue, on retourne -1 */
+
+		counter++; /* Incrémentation du compteur si succès */
 	}
 
-	return (counter);
+	return (counter); /* On retourne le nombre total de caractères affichés */
 }
 
 /**
- * print_percent - affiche un pourcentage (%)
- * @arguments: va_list non utilisé, mais nécessaire pour la cohérence de
- * la structure
+ * print_percent - Affiche un caractère pourcentage (%)
+ * @arguments: va_list (non utilisé mais requis pour la signature)
  *
- * Return: nombre de caractères affichés, toujours 1, puisque character */
+ * Return: 1 si succès, -1 en cas d'erreur d'écriture
+ */
 int print_percent(va_list arguments)
 {
-	(void)arguments;
-	_putchar('%');
-	return (1);
+	(void)arguments; /* On ignore l'argument car inutile ici */
+
+	/* On tente d'afficher le caractère '%' */
+	if (_putchar('%') == -1)
+		return (-1); /* Si échec, on retourne -1 */
+
+	return (1); /* Sinon, on a affiché 1 caractère */
 }

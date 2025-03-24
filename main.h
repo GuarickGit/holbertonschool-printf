@@ -15,7 +15,7 @@
 
 typedef struct type_specifier {
 
-	char *specifier;
+	char specifier;
 	int (*print_func)(va_list arguments);
 } type_specifier;
 

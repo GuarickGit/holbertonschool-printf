@@ -4,7 +4,7 @@
  * print_char - affiche un caractère
  * @arguments: va_list contenant le caractère à afficher
  *
- * Return: nombre de caractères affichés (toujours 1)
+ * Return: nombre de caractères affichés, toujours 1, puisque character
  */
 int print_char(va_list arguments)
 {
@@ -47,8 +47,7 @@ int print_string(va_list arguments)
  * @arguments: va_list non utilisé, mais nécessaire pour la cohérence de
  * la structure
  *
- * Return: nombre de caractères affichés (toujours 1)
- */
+ * Return: nombre de caractères affichés, toujours 1, puisque character */
 int print_percent(va_list arguments)
 {
 	(void)arguments;

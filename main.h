@@ -13,7 +13,8 @@
  * @print_func: pointeur vers la fonction qui affiche ce type
  */
 
-typedef struct type_specifier {
+typedef struct type_specifier
+{
 
 	char specifier;
 	int (*print_func)(va_list arguments);

@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		{'\0', NULL} /*quand on arrive à la fin de la string on renvoie null*/
 	};
 	/*on lit les argu après format*/
-	va_start(arguments, format);
+	va_start (arguments, format);
 
 	/*vérifier si format est null*/
 	if (format == NULL)

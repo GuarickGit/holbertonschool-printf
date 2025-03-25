@@ -54,7 +54,6 @@ int handle_specifier(type_specifier *symbol, char c, va_list arguments)
 int _printf(const char *format, ...)
 {
 	va_list arguments; /*j'ouvre ma liste d'arguments*/
-
 	int i = 0, count = 0; /*variables de boucle + compteur de char*/
 
 	type_specifier symbol[] = { /*je personnalise ma structure*/

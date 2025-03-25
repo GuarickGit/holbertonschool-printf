@@ -3,7 +3,7 @@
 ## 📝 Auteurs
 
 - Claire https://github.com/Helvlaska
-- Kevin (A COMPLETER)
+- Kevin https://github.com/GuarickGit
 
 ---
 

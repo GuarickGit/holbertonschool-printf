@@ -2,8 +2,8 @@
 
 ## 📝 Auteurs
 
-- Claire https://github.com/Helvlaska
-- Kevin https://github.com/GuarickGit
+- Claire Castan https://github.com/Helvlaska
+- Kevin Fresne https://github.com/GuarickGit
 
 ---
 

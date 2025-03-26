@@ -120,7 +120,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format main.h *.c
 | | Création du fichier _printf.c | Mise en place de la fonction principale |
 | | Ajout d'un README.md vide | Prêt à documenter au fil du projet |
 | Jour 2 | Refactorisation de _printf | Code plus propre et lisible |
-| | Validation de la tâche 0 (gestion des %c, %s, %%) | ✅ Validé à 100% par le checker |
+| | Validation de la gestion des specifiers %c, %s, %% | ✅ Validé à 100% par le checker |
 | | Mise en place d'un squelette pour le README | Structure de documentation en place | 
 | Jour 3 | Validation de la gestion des specifiers %d et %i | ✅ Validé à 100% par le checker |
 | | Création du flowchart avec Mermaid | Support visuel validé en équipe |

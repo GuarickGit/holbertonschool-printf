@@ -123,7 +123,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format main.h *.c
 | | Validation de la tâche 0 (gestion des %c, %s, %%) | ✅ Validé à 100% par le checker |
 | | Mise en place d'un squelette pour le README | Structure de documentation en place | 
 | Jour 3 | Validation de la gestion des specifiers %d et %i | ✅ Validé à 100% par le checker |
-| Création du flowchart avec Mermaid | Support visuel validé en équipe |
+| | Création du flowchart avec Mermaid | Support visuel validé en équipe |
 | | Ajout et complétion du README | Documentation claire et à jour |
 | Prochaine étape | Gestion des tâches annexes (optimisations, bonus) | Planifié et à suivre |
 

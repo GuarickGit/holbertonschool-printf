@@ -29,13 +29,46 @@ Ce projet s’inscrit dans le cadre de la formation Holberton et a pour objectif
 ## 2️⃣ Objectif du projet
 
 - Reproduire la fonction `printf`.
-- Gérer différents specifiers (`c`, `s`, `%`, etc.).  (A COMPLETER)
+- Gérer différents specifiers (`c`, `s`, `%`, `d`, `i`).
 - Respecter les normes Betty.
 - Créer un code lisible, structuré et évolutif.
 
 ## 3️⃣ Flowchart
 
-👉 **Insérer ici une image du flowchart** 
+%% Noeuds
+    A[Début _printf] --> B[Initialiser va_list]
+    B --> C{format == NULL ?}
+    C -- Oui --> D[Retourner -1]
+    C -- Non --> E[Initialiser i et count à 0]
+    E --> F{Tant que l'index 'i' de format != '\0'...}
+
+    F -- Non --> M[...Finaliser avec va_end] --> N[Retourner 'count']
+
+    F -- Oui --> G{... Est-ce que l'index 'i' de format == % ?}
+
+    G -- Non --> H[Imprimer l'index 'i' de format avec _putchar]
+    H --> I[Incrementer 'count' avec le résultat]
+    I --> J[Incrementer 'i' pour avancer sur format]
+    J --> F
+
+    G -- Oui --> K{Est-ce que le caractère suivant == '\0' ?}
+    K -- Oui --> D
+    K -- Non --> L[Incrementer 'i']
+    L --> O[Appeler la fonction handle_specifier pour trouver un match dans la structure]
+    O --> P[Incrementer 'count' avec le résultat]
+    P --> Q[Incrementer 'i' pour avancer sur format]
+    Q --> F
+
+    %% Styles
+    classDef startend fill:#cce5ff,stroke:#333,stroke-width:2;
+    classDef step fill:#d4edda,stroke:#2d662d,stroke-width:1;
+    classDef decision fill:#fff3cd,stroke:#a08900,stroke-width:1;
+    classDef error fill:#f8d7da,stroke:#842029,stroke-width:1;
+
+    class A,N,M startend;
+    class B,E,H,I,J,L,O,P,Q step;
+    class C,F,G,K decision;
+    class D error; 
 
 ## 4️⃣ Arborescence du projet
 
@@ -43,16 +76,17 @@ Ce projet s’inscrit dans le cadre de la formation Holberton et a pour objectif
 /holbertonschool-printf
 │
 ├── main.h
+├── main.c
 ├── _printf.c
+├── _putchar.c
 ├── specifiers.c
-├── README.md
-└── (Autres fichiers...)
+└── README.md
 ```
 
 ## 5️⃣ Compilation
 
 ```bash
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format main.h *.c
 ```
 
 ## 6️⃣ Liste des fonctions
@@ -60,11 +94,11 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 | Fichier             | Fonction             | Rôle                                                 |
 | ------------------- | -------------------- | ---------------------------------------------------- |
 | _printf.c           | _printf             | Fonction principale, lecture et dispatch             |
+| _printf.c           | print_unknown_char   | Gère les caractères non reconnus après `%`           |
+| _printf.c           | handle_specifier     | Gère la recherche et l'appel de la fonction associée |
 | specifiers.c        | print_char           | Affiche un caractère                                 |
 | specifiers.c        | print_string         | Affiche une chaîne de caractères                     |
 | specifiers.c        | print_percent        | Affiche un `%` littéral                              |
-| _printf.c           | print_unknown_char   | Gère les caractères non reconnus après `%`           |
-| _printf.c           | handle_specifier     | Gère la recherche et l'appel de la fonction associée |
 
 ## 7️⃣ Contraintes
 
@@ -75,8 +109,25 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 ## 8️⃣ Journal de bord / Décisions prises
 
-*(À remplir au fur et à mesure : décisions de design, ajustements, choix de structure.
-Exemple d'entrée : Date, décision prise, raison, impact sur le projet.)*
+| Date / Étape | Décision / Action prise | Impact / Validation |
+| ------------ | ----------------------- | ------------------- |
+| Jour 1 | Brainstorming sur la façon de procéder | Base de réflexion commune posée |
+| | Ébauche d'un flowchart | Visualisation claire du projet |
+| | Création du repository GitHub (HolbertonSchool_printf) | Environnement de travail prêt |
+| | Création des branches de travail (main, Kevin, Claire) | Organisation du travail structurée |
+| | Création d'un fichier main.h avec la structure et les prototypes | Support commun pour tous les fichiers |
+| | Création d'un fichier specifiers.c | Centralisation des fonctions specifiers |
+| | Création du fichier _printf.c | Mise en place de la fonction principale |
+| | Ajout d'un README.md vide | Prêt à documenter au fil du projet |
+| Jour 2 | Refactorisation de _printf | Code plus propre et lisible |
+| | Validation de la tâche 0 (gestion des %c, %s, %%) | ✅ Validé à 100% par le checker |
+| | Mise en place d'un squelette pour le README | Structure de documentation en place | 
+| Jour 3 | Validation de la gestion des specifiers %d et %i | ✅ Validé à 100% par le checker |
+| Création du flowchart avec Mermaid | Support visuel validé en équipe |
+| | Ajout et complétion du README | Documentation claire et à jour |
+| Prochaine étape | Gestion des tâches annexes (optimisations, bonus) | Planifié et à suivre |
+
+
 
 ## 9️⃣ Tests réalisés
 
@@ -88,11 +139,8 @@ Exemple d'entrée : Date, décision prise, raison, impact sur le projet.)*
 
 - Documentation man de `printf`
 - Cours Holberton
+- Exercices Holberton
 - Discussions entre binômes
 - ChatGPT
 
 ---
-
-👉 **Note finale :** Le README sera relu et finalisé à la fin du projet.
-
-

@@ -72,9 +72,9 @@ int _printf(const char *format, ...)
 
 	while (format[i]) /*on parcours format via son pointeur*/
 	{
-		if (format[i] == '%')
+		if (format[i] == '%') /*si le caractère est %*/
 		{
-			/*si le char est en fin de chaine = pas de char après*/
+			/*si pas de char après*/
 			if (format[i + 1] == '\0')
 				return (-1);
 

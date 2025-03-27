@@ -93,7 +93,27 @@ flowchart  TD
 gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format main.h *.c
 ```
 
-## 6️⃣ Liste des fonctions
+## 6️⃣ Exemple & Sortie
+
+### Exemple
+```bash
+#include "main.h"
+int main()
+{
+_printf("String: [%s]\n", "Hello, Axel, thank you for the 100% !");
+_printf("Decimal: [%d]\n", 190892);
+return(0);
+}
+```
+
+### Sortie
+
+```bash
+String: Hello, Axel, thank you for the 100% !
+Decimal: 190892
+```
+
+## 7️⃣ Liste des fonctions
 
 | Fichier             | Fonction             | Rôle                                                 |
 | ------------------- | -------------------- | ---------------------------------------------------- |
@@ -105,14 +125,14 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format main.h *.c
 | specifiers.c        | print_percent        | Affiche un `%` littéral                              |
 | specifiers.c        | print_integer        | Affiche un entier ou une décimale                              |
 
-## 7️⃣ Contraintes
+## 8️⃣ Contraintes
 
 - Respecter la norme Betty (40 lignes max / fonction).
 - Pas d’utilisation de fonctions interdites.
 - Gestion propre des erreurs.
 - Retourner le nombre de caractères écrits.
 
-## 8️⃣ Journal de bord / Décisions prises
+## 9️⃣ Journal de bord / Décisions prises
 
 | Date / Étape | Décision / Action prise | Impact / Validation |
 | ------------ | ----------------------- | ------------------- |
@@ -132,13 +152,6 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format main.h *.c
 | | Ajout et complétion du README | Documentation claire et à jour |
 | Prochaine étape | Gestion des tâches annexes (optimisations, bonus) | Planifié et à suivre |
 
-
-
-## 9️⃣ Tests réalisés
-
-- Liste de tests unitaires.
-- Tests d’intégration.
-- Capture de validations par le checker.
 
 ## 🔟🔗 Sources / Références
 

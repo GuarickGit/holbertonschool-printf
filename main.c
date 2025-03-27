@@ -24,8 +24,8 @@ int main(void)
 	printf("Binary: [%b]\n", 0);
 	_printf("Binary: [%b]\n", 1);
 	printf("Binary: [%b]\n", 1);
-	_printf("Binary: [%b]\n", 345);
-	printf("Binary: [%b]\n", 345);
+	_printf("Binary: [%b]\n", 1024);
+	printf("Binary: [%b]\n", 1024);
 	_printf("Binary: décimal : [%d], binaire :[%b]\n", 10, 10);
 	printf("Binary: décimal : [%d], binaire :[%b]\n", 10, 10);
 	_printf("Negative:[%d]\n", -762534);

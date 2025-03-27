@@ -99,6 +99,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format main.h *.c
 | specifiers.c        | print_char           | Affiche un caractère                                 |
 | specifiers.c        | print_string         | Affiche une chaîne de caractères                     |
 | specifiers.c        | print_percent        | Affiche un `%` littéral                              |
+| specifiers.c        | print_integer        | Affiche un entier ou une décimale                              |
 
 ## 7️⃣ Contraintes
 

@@ -9,6 +9,14 @@ int print_binary(va_list arguments)
     /* On récupère la valeur de l'argument */
 	unsigned int value = va_arg(arguments, unsigned int);
 
+    /*gérer si value = 0*/
+    /*sinon la boucle ne bouclera pas*/
+    if (value == 0)
+    {
+        _putchar('0');
+        return (1);
+    }
+    
     /*on continue tant que value n'est pas égale à 0*/
     while (value != 0)
     {

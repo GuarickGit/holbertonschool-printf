@@ -100,7 +100,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format main.h *.c
 #include "main.h"
 int main()
 {
-_printf("String: [%s]\n", "Hello, Axel, thank you for the 100% !");
+_printf("String: [%s]\n", "Hello Axel, thank you for the 100% !");
 _printf("Decimal: [%d]\n", 190892);
 return(0);
 }
@@ -109,7 +109,7 @@ return(0);
 ### Sortie
 
 ```bash
-String: Hello, Axel, thank you for the 100% !
+String: Hello Axel, thank you for the 100% !
 Decimal: 190892
 ```
 

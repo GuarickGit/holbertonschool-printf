@@ -36,6 +36,7 @@ Ce projet s’inscrit dans le cadre de la formation Holberton et a pour objectif
 ## 3️⃣ Flowchart
 
 ```mermaid
+%%{init: {'theme': 'default', 'themeVariables': {'primaryTextColor': '#000'}}}%%
 flowchart  TD
 %% Noeuds
     A[Début _printf] --> B[Initialiser va_list]

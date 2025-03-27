@@ -1,6 +1,32 @@
 #include "main.h"
 
-/* Fonction pour afficher un caractère inconnu après '%' */
+/**
+ * get_specifiers - Retourne un tableau de specifiers avec leurs fonctions
+ * associées. Cette fonction déclare un tableau statique contenant chaque
+ * specifier (caractère spécial après %) et la fonction associée pour
+ * l'affichage. Le tableau est statique pour rester en mémoire après
+ * l'exécution de la fonction, et pouvoir être utilisé dans _printf
+ * sans le redéclarer à chaque fois.
+ *
+ * Return: pointeur vers le tableau de type_specifier.
+ */
+type_specifier *specifiers_list(void)
+{
+	/* tableau de structure contenant les specifiers et leurs fonctions */
+	static type_specifier symbol[] = {
+		{'c', print_char},
+		{'s', print_string},
+		{'%', print_percent},
+		{'d', print_integer},
+		{'i', print_integer},
+		{'b', print_binary},
+		{'\0', NULL} /* fin du tableau */
+	};
+
+	/* on retourne l'adresse du tableau */
+	return (symbol);
+}
+
 /**
  * print_unknown_char - Affiche '%' suivi d'un caractère inconnu.
  * @c: le caractère inconnu à afficher après '%'.
@@ -14,9 +40,8 @@ int print_unknown_char(char c)
 	return (2); /*on ajoute donc 2 char dans la length*/
 }
 
-/* Fonction pour gérer la recherche dans la structure et l'appel associé */
 /**
- * handle_specifier - Cherche un specifier dans la structure
+ * match_specifier - Cherche un specifier dans la structure
  * et appelle la fonction associée.
  * @symbol: tableau contenant les specifiers et les fonctions associées.
  * @c: le caractère suivant '%'.
@@ -25,7 +50,7 @@ int print_unknown_char(char c)
  * Return: nombre de caractères imprimés,
  * ou gestion du caractère inconnu si non trouvé.
  */
-int handle_specifier(type_specifier *symbol, char c, va_list arguments)
+int match_specifier(type_specifier *symbol, char c, va_list arguments)
 {
 	int j = 0;
 
@@ -56,22 +81,12 @@ int _printf(const char *format, ...)
 	va_list arguments; /*j'ouvre ma liste d'arguments*/
 	int i = 0, count = 0; /*variables de boucle + compteur de char*/
 
-	type_specifier symbol[] = { /*je personnalise ma structure*/
-		{'c', print_char},
-		{'s', print_string},
-		{'%', print_percent},
-		{'d', print_integer},
-		{'i', print_integer},
-		{'b', print_binary},
-		{'\0', NULL} /*quand on arrive à la fin de la string on renvoie null*/
-	};
-
-	va_start(arguments, format); /*on lit les argu après format*/
+	va_start(arguments, format); /*on lit les args après format*/
 
 	if (format == NULL) /*vérifier si format est null*/
 		return (-1);
 
-	while (format[i]) /*on parcours format via son pointeur*/
+	while (format[i]) /*on parcours format via son index*/
 	{
 		if (format[i] == '%') /*si le caractère est %*/
 		{
@@ -80,8 +95,8 @@ int _printf(const char *format, ...)
 				return (-1);
 
 			i++; /*on avance au char suivant*/
-			/*on délègue la gestion du specifier*/
-			count += handle_specifier(symbol, format[i], arguments);
+			/*la gestion du specifier est faite par match_specifier*/
+			count += match_specifier(specifiers_list(), format[i], arguments);
 		}
 		else
 		{
@@ -92,6 +107,6 @@ int _printf(const char *format, ...)
 	}
 	/*on ferme la lecture de liste proprement & évite fuite mémoire*/
 	va_end(arguments);
-	/*retourner le compteur de caractères*/
-	return (count);
+	
+	return (count); /*retourner le compteur de caractères (length)*/
 }

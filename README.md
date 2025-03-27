@@ -35,6 +35,7 @@ Ce projet s’inscrit dans le cadre de la formation Holberton et a pour objectif
 
 ## 3️⃣ Flowchart
 
+```mermaid
 %% Noeuds
     A[Début _printf] --> B[Initialiser va_list]
     B --> C{format == NULL ?}
@@ -68,7 +69,8 @@ Ce projet s’inscrit dans le cadre de la formation Holberton et a pour objectif
     class A,N,M startend;
     class B,E,H,I,J,L,O,P,Q step;
     class C,F,G,K decision;
-    class D error; 
+    class D error;
+```
 
 ## 4️⃣ Arborescence du projet
 
@@ -122,7 +124,7 @@ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format main.h *.c
 | | Ajout d'un README.md vide | Prêt à documenter au fil du projet |
 | Jour 2 | Refactorisation de _printf | Code plus propre et lisible |
 | | Validation de la gestion des specifiers %c, %s, %% | ✅ Validé à 100% par le checker |
-| | Mise en place d'un squelette pour le README | Structure de documentation en place | 
+| | Mise en place d'un squelette pour le README | Structure de documentation en place |
 | Jour 3 | Validation de la gestion des specifiers %d et %i | ✅ Validé à 100% par le checker |
 | | Création du flowchart avec Mermaid | Support visuel validé en équipe |
 | | Ajout et complétion du README | Documentation claire et à jour |

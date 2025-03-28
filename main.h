@@ -28,5 +28,9 @@ int print_percent(va_list arguments);
 int print_integer(va_list arguments);
 int print_binary(va_list arguments);
 int print_unsigned (va_list arguments);
+int print_hexa(unsigned int n, int uppercase);
+int print_hexa_lower(va_list args);
+int print_hexa_upper(va_list args);
+
 
 #endif /* MAIN_H */

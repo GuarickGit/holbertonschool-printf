@@ -108,6 +108,6 @@ int _printf(const char *format, ...)
 	}
 	/*on ferme la lecture de liste proprement & évite fuite mémoire*/
 	va_end(arguments);
-	
+
 	return (count); /*retourner le compteur de caractères (length)*/
 }

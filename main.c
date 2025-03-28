@@ -30,6 +30,8 @@ int main(void)
 	printf("Binary: décimal : [%d], binaire :[%b]\n", 10, 10);
 	_printf("Negative:[%d]\n", -762534);
 	printf("Negative:[%d]\n", -762534);
+	_printf("Unsigned:[%u]\n", 1024);
+	printf("Unsigned:[%u]\n", 1024);
 	_printf("Unsigned:[%u]\n", ui);
 	printf("Unsigned:[%u]\n", ui);
 	_printf("Unsigned octal:[%o]\n", ui);

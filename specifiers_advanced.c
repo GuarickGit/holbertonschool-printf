@@ -95,6 +95,52 @@ int print_unsigned (va_list arguments)
 }
 
 /**
+ * print_octal - Affiche un entier non signé en base 8 (octal)
+ * @arguments: liste d’arguments contenant la valeur à afficher
+ *
+ * Cette fonction récupère un unsigned int depuis une liste variadique,
+ * le convertit en octal (base 8), puis affiche chaque chiffre à l’aide
+ * de _putchar. Les chiffres sont d’abord stockés à l’envers dans un
+ * tableau temporaire, puis affichés dans le bon ordre. Si la valeur est 0,
+ * elle est affichée directement.
+ *
+ * Return: le nombre total de caractères affichés
+ */
+int print_octal(va_list arguments)
+{
+    /*je recupère l'argument en unsigned int*/
+	unsigned int number = va_arg(arguments, unsigned int);
+	int count = 0, i = 0; /*variable de boucle + compteur*/
+
+	/*tableau pour stocker les chiffres à l'envers */
+	/*20 suffisant pour contenir tous les chiffres d’un long */
+	char waiting_numbers[12];
+
+	/*si le nombre est zéro, on l'affiche tout de suite*/
+	if (number == 0)
+	{
+		_putchar('0'); /*on affiche le chiffre 0*/
+		return (count + 1); /*on retourne le nombre de caractères */
+	}
+
+	while (number > 0) /*on parcours number */
+	{
+		/*on convertit chaque chiffre en caractère */
+		waiting_numbers[i] = '0' + (number % 8);
+		i++; /*on avance dans l'index de number*/
+		number = number / 8; /*on passe au chiffre suivant ds le tableau*/
+	}
+
+	while (i--) /*on affiche les chiffres dans le bon ordre*/
+	{
+		_putchar(waiting_numbers[i]); /*on affiche le caractère actuel*/
+		count++; /*on incrémente le compteur de caractères*/
+	}
+	/*on retourne le nombre total de caractères affichés*/
+	return (count);
+}
+
+/**
  * print_hexa - Affiche un entier non signé en hexadécimal
  * @n: Le nombre à convertir et afficher
  * @uppercase: Si True, uppercase (A-F), sinon lowercase (a-f) (Boolean)

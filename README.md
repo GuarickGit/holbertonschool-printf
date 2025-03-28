@@ -109,8 +109,8 @@ int main()
 ### Sortie
 
 ```bash
-String: Hello Axel, thank you for the 100% !
-Decimal: 190892
+String: [Hello Axel, thank you for the 100% !]
+Decimal: [190892]
 ```
 
 ## 7️⃣ Liste des fonctions

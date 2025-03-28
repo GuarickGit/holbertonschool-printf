@@ -20,6 +20,7 @@ type_specifier *specifiers_list(void)
 		{'d', print_integer},
 		{'i', print_integer},
 		{'b', print_binary},
+		{'u', print_unsigned},
 		{'\0', NULL} /* fin du tableau */
 	};
 

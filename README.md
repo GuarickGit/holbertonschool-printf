@@ -57,7 +57,7 @@ flowchart  TD
     G -- Oui --> K{Est-ce que le caractère suivant == '\0' ?}
     K -- Oui --> D
     K -- Non --> L[Incrementer 'i']
-    L --> O[Appeler la fonction handle_specifier pour trouver un match dans la structure]
+    L --> O[Appeler la fonction match_specifier pour trouver un match dans la structure]
     O --> P[Incrementer 'count' avec le résultat]
     P --> Q[Incrementer 'i' pour avancer sur format]
     Q --> F

@@ -21,6 +21,8 @@ type_specifier *specifiers_list(void)
 		{'i', print_integer},
 		{'b', print_binary},
 		{'u', print_unsigned},
+		{'x', print_hexa_lower},
+		{'X', print_hexa_upper},
 		{'\0', NULL} /* fin du tableau */
 	};
 

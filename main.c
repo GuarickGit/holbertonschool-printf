@@ -22,8 +22,6 @@ int main(void)
 	printf("Length:[%d, %i]\n", len2, len2);
 	_printf("Binary: [%b]\n", 0);
 	printf("Binary: [%b]\n", 0);
-	_printf("Binary: [%b]\n", 1);
-	printf("Binary: [%b]\n", 1);
 	_printf("Binary: [%b]\n", 1024);
 	printf("Binary: [%b]\n", 1024);
 	_printf("Binary: décimal : [%d], binaire :[%b]\n", 10, 10);
